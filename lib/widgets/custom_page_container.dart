@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:repair_app/utils/const_colors.dart';
 import 'package:repair_app/utils/const_images.dart';
 
@@ -21,7 +22,7 @@ class CustomPageContainer extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: isDashboard ? height / 3.3 : height / 4.5,
+      height: isDashboard ? height / 3 : height / 4,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [primaryColor, secondaryColor],
@@ -36,11 +37,7 @@ class CustomPageContainer extends StatelessWidget {
             left: 356.sp,
             top: 100.sp,
             child: Column(children: [
-              Image.asset(
-                funnel,
-                width: 35.w,
-                height: 32.h,
-              ),
+              SvgPicture.asset(funnel),
               Text(
                 "فرز حسب",
                 style: TextStyle(
@@ -56,11 +53,7 @@ class CustomPageContainer extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(vertical: 8.sp),
-              child: Image.asset(
-                imgLogo,
-                height: 109.95.h,
-                width: 113.95.w,
-              ),
+              child: SvgPicture.asset(imgLogo)
             ),
             Text(
               text,

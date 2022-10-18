@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:repair_app/utils/const_colors.dart';
 import 'package:repair_app/utils/const_images.dart';
 
@@ -30,7 +31,7 @@ class CustomLogoContainer extends StatelessWidget {
             text,
             style: TextStyle(fontSize: 25.sp, color: Colors.white),
           ),
-          Image.asset(
+          SvgPicture.asset(
             imgLogo,
             height: 205.h,
             width: 212.w,
