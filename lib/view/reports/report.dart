@@ -18,28 +18,36 @@ class Reports extends GetView<ReportController> {
       splitScreenMode: true,
       builder: (context, child) => Scaffold(
         key: controller.reportKey,
-        body: SizedBox(
+        body: Container(
             width: width,
             height: height,
-            child: Column(children: [
-              const CustomPageContainer(
-                text: "حالات الخدمات",
-                isFilter: true,
-                isDashboard: false,
-              ),
-              serviceItem(
-                  color: const Color(0xffff3d3d),
-                  title: "4",
-                  description: "خدمات تم إنجازها"),
-              serviceItem(
-                  color: const Color(0xffff663d),
-                  title: "4",
-                  description: "خدمات قيد الإنجاز"),
-              serviceItem(
-                  color: const Color(0xff00935d),
-                  title: "4",
-                  description: "خدمات تم إلغاؤها")
-            ])),
+            child: Column(
+              children: [
+                const CustomPageContainer(
+                  text: "حالات الخدمات",
+                  isFilter: true,
+                  isDashboard: false,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(children: [
+                      serviceItem(
+                          color: const Color(0xffff3d3d),
+                          title: "4",
+                          description: "خدمات تم إنجازها"),
+                      serviceItem(
+                          color: const Color(0xffff663d),
+                          title: "4",
+                          description: "خدمات قيد الإنجاز"),
+                      serviceItem(
+                          color: const Color(0xff00935d),
+                          title: "4",
+                          description: "خدمات تم إلغاؤها")
+                    ]),
+                  ),
+                ),
+              ],
+            )),
       ),
     );
   }

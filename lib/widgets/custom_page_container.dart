@@ -22,7 +22,7 @@ class CustomPageContainer extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: isDashboard ? height / 3 : height / 4,
+      height: isDashboard ? 320.h : 245.h,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [primaryColor, secondaryColor],
