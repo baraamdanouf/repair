@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:repair_app/utils/const_colors.dart';
 import 'package:repair_app/view/profile/profile_controller.dart';
-import '../../widgets/custom_text.dart';
 
 class Profile extends GetView<ProfileController> {
   const Profile({Key? key}) : super(key: key);
@@ -23,13 +22,13 @@ class Profile extends GetView<ProfileController> {
             width: width,
             height: height,
             child: Center(
-                child: CustomText(
-              text: "Profile",
+                child: Text(
+             "Profile", style: TextStyle(
               color: primaryColor,
-              bold: true,
               fontSize: 25.sp,
+                  fontWeight: FontWeight.bold
             ))),
       ),
-    );
+      ));
   }
 }

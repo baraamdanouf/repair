@@ -1,18 +1,20 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+class LoginController extends GetxController {
+  final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> loginKey = GlobalKey<ScaffoldState>();
 
-class LoginController extends GetxController{
-  RxBool showPassword = true.obs;
+  final phoneKey = GlobalKey();
+  final passwordKey = GlobalKey();
 
-//  get getViewCreateAccount => Get.off(const CreateAccountView());
+  final loginBtnKey = GlobalKey();
+  final signUpBtnKey = GlobalKey();
 
-//  get getViewResetPassword => Get.to(const ResetPasswordView());
+  final isChecked = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
 
-    everAll([showPassword], (_) => {});
-  }
+  late TextEditingController phoneController = TextEditingController(),
+      passwordController = TextEditingController();
 
 }

@@ -1,25 +1,19 @@
 import 'dart:ui';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 //Color
-const Color primaryColor = Color(0xff0f4b7f);
+const Color primaryColor = Color(0xff144479);
 const secondaryColor = Color(0xff005c8e);
-const greyLite = Color(0xfff2f2f2);
-const greyDark = Color(0xff979797);
-const greyBorder = Color(0xff6c7480);
-const greyVeryDark = Color(0xff4e4e4e);
+const blueLite = Color(0xff50a3ff);
+const greyLite = Color(0xffd4dee8);
+const blueBackground = Color(0xfff2f8ff);
+const greyDark = Color(0xff6c7480);
+const greyDrawer = Color(0xffcecece);
+const blue = Color(0xff49768f);
+const red = Color(0xffff483d);
+const green = Color(0xff098861);
+const greyVeryDark = Color(0xff707070);
+const redWhite = Color(0xfffff7f7);
+const greenWhite = Color(0xfffafffc);
+const orangeWhite = Color(0xffffffff);
 
 //Fonts
 const String lemonda = "Lemonada";
-
-//font size
-final textVeryVeryVerySmall = 10.sp;
-final textVeryVerySmall = 13.sp;
-final textVerySmall = 14.sp;
-final textSmall = 16.sp;
-final textMedium = 18.sp;
-final textLarge = 20.sp;
-final textVeryLarge = 24.sp;
-
-bool isRtLApplication = true , isIntro = true;

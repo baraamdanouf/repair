@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_multi_formatter/formatters/phone_input_formatter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:repair_app/utils/const_colors.dart';
+import 'package:repair_app/utils/local_storage.dart';
 
 class CustomEditText extends StatelessWidget {
-
-  final TextEditingController? controller;
+  final TextEditingController? textEditingController;
 
   final TextAlign? textAlign;
 
@@ -15,96 +15,117 @@ class CustomEditText extends StatelessWidget {
 
   final FocusNode? focusNode;
 
-  final String?  hintText;
+  final String? hintText, labelText;
 
   final TextInputType inputType;
 
-  final bool? autoCorrect, autoFocus, filled;
+  final bool? obscureText;
 
   final IconData? icon;
 
   final Color? cursorColor;
 
- final List<TextInputFormatter>? listFormat;
+  final List<PhoneInputFormatter>? listFormat;
+
+  final int lines;
+
+  final double? width, height;
 
   final ValueChanged<String>? onSubmitted, onChanged;
 
   const CustomEditText(
       {Key? key,
-        required this.inputType,
-        this.controller,
-        this.onChanged,
-        this.textAlign,
-        this.onSubmitted,
-        this.focusNode,
-        this.textInputAction,
-        this.textDirection,
-        this.hintText,
-        this.autoCorrect,
-        this.autoFocus,
-        this.filled, this.icon, this.cursorColor, this.listFormat})
+      required this.inputType,
+      this.textEditingController,
+      this.onChanged,
+      this.textAlign,
+      this.onSubmitted,
+      this.focusNode,
+      this.textInputAction,
+      this.textDirection,
+      this.hintText,
+      this.icon,
+      this.cursorColor,
+      this.listFormat,
+      this.labelText,
+      this.obscureText,
+        this.lines = 1,
+         this.width,
+         this.height})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
-        width: 300.w,
-        height: 50.h,
+    return SizedBox(
+      width: width,
+      height: height,
+      child: Directionality(
+        textDirection: LocalStorage.languageSelected == 'ar'
+            ? TextDirection.rtl
+            : TextDirection.ltr,
         child: TextFormField(
-          controller: controller,
-          textAlign: TextAlign.end,
+        //  maxLines: lines,
+          maxLines: lines ,
+          controller: textEditingController,
+          textAlignVertical: TextAlignVertical.center,
+          obscureText: obscureText ?? false,
+          textAlign: TextAlign.start,
           textInputAction: textInputAction,
-          textDirection: TextDirection.ltr,
-    //      inputFormatters: [PhoneInputFormatter()],
-          focusNode: focusNode,
+          textDirection: textDirection,
+          inputFormatters: listFormat,
           cursorColor: cursorColor,
           keyboardType: inputType,
-          autofocus: autoFocus ?? false,
-       //   onSubmitted: onSubmitted,
-          onChanged: onChanged,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 13.sp,
-          ),
-
+          style: TextStyle(color: Colors.black, fontSize: 15.h),
+          // validator: (value) {
+          //   if (value!.isEmpty) return "مطلوب";
+          //   return null;
+          // },
           decoration: InputDecoration(
-            filled: filled ?? true,
-            contentPadding: EdgeInsetsDirectional.all(5.sp),
-            fillColor: Colors.white,
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(7.sp),
-              borderSide: BorderSide(
-                color: greyBorder,
-                width: 2.w,
-                style:BorderStyle.solid,
+              contentPadding: EdgeInsetsDirectional.only(top: 5.h, start: 10.w),
+              fillColor: Colors.white,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7.r),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                  width: 1.5.w,
+                  style: BorderStyle.solid,
+                ),
               ),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.sp),
-              borderSide: BorderSide(
-                color: greyBorder,
-                width: 2.w,
-                style:BorderStyle.solid,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7.r),
+                borderSide: BorderSide(
+                  color: greyDark,
+                  width: 1.5.w,
+                  style: BorderStyle.solid,
+                ),
               ),
-            ),
-            hintText: hintText,
-            hintStyle:TextStyle(
-              height: 0.0,
-              color: greyDark,
-              fontSize: 13.sp,
-            ),
-            prefixIcon: Padding(
-              padding: EdgeInsets.only(
-                left: 5.sp,
-                right: 5.sp,
+              labelText: labelText,
+              labelStyle: TextStyle(color: primaryColor,  fontSize: lines == 1 ? 18.h : 20.h,),
+              hintText: hintText,
+              hintStyle: TextStyle(
+                color: greyDark,
+                fontSize: lines == 1 ? 15.h : 20.h,
               ),
-              child: Icon(
-                icon,
-                color: primaryColor,
-                size: 35.sp,
+              suffixIcon: Padding(
+                  padding: EdgeInsets.only(
+                    left: 2.w,
+                    right: 2.w,
+                  ),
+                  child: Icon(
+                    icon,
+                    size: 30.w,
+                    color: primaryColor,
+                  ))
+              // SvgPicture.asset(
+              //   icon,
+              //  // cacheColorFilter: true,
+              //   allowDrawingOutsideViewBox: true,
+              //   color: primaryColor,
+              //   height: 10.sp,
+              // ),
               ),
-            ),
-
-          ),));
+        ),
+      ),
+    );
   }
 }

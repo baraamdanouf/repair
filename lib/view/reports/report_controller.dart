@@ -3,4 +3,9 @@ import 'package:get/get.dart';
 
 class ReportController extends GetxController {
   final GlobalKey<ScaffoldState> reportKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
 }
