@@ -14,16 +14,16 @@ const Map<String, String> ar = {
 
 //region Home
   'services cases': 'حالات الخدمات',
-  'services \nperformed': 'خدمات تم إنجازها',
-  'services \ncanceled': 'خدمات تم إلغاءها',
-  'services in \nprogress': 'خدمات قيد الإنجاز',
+  'services performed': 'خدمات تم إنجازها',
+  'services canceled': 'خدمات تم إلغاءها',
+  'services in progress': 'خدمات قيد الإنجاز',
   'plumbing': 'السباكة',
   'paint': 'البويا والدهان',
   'kitchen services': 'خدمات المطبخ',
-  'lighting \nand lighting': 'الإنارة و الإضاءة',
-  'air conditioning \nand refrigeration': 'التكييف و التبريد',
+  'lighting and lighting': 'الإنارة و الإضاءة',
+  'air conditioning and refrigeration': 'التكييف و التبريد',
   'air conditioning and refrigeration services': 'خدمات التكييف و التبريد',
-  'cleaning \nand sterilization': 'التنظيف و التعقيم',
+  'cleaning and sterilization': 'التنظيف و التعقيم',
   'client name': 'اسم العميل',
   'notifications': 'الإشعارات',
   'profile': 'الملف الشخصي',
@@ -40,12 +40,10 @@ const Map<String, String> ar = {
   'contracts': 'العقود',
   'payments': "الدفوعات",
   "Why Not Tech": "Why Not Tech",
+  'Press again BACK to exit': 'من فضلك, اضغط زر الرجوع مرة ثانية لإغلاق التطبيق',
 //endregion Home
 
 //region report
-  'services performed': 'خدمات تم إنجازها',
-  'services canceled': 'خدمات تم إلغاءها',
-  'services in progress': 'خدمات قيد الإنجاز',
   'requests performed': 'طلبات تم تنفيذها',
   'requests canceled': 'طلبات ملغية',
   'requests in progress': 'طلبات قيد التنفيذ',
@@ -59,6 +57,10 @@ const Map<String, String> ar = {
   "worker": "العامل",
   "building": "البناء",
   "service type": "نوع الخدمة",
+  "request date" : "تاريخ الطلب",
+   "service" : "الخدمة",
+   "clock" : "الساعة",
+  "unit no" : "رقم الوحدة",
 //endregion report
 
 //region conditioner
@@ -101,14 +103,17 @@ const Map<String, String> ar = {
   "problem": "المشكلة",
   "write description of problem": "اكتب شرحاً تفصيلياً عن المشكلة",
   "problem explanation text": "نص شرح المشكلة",
-  "The request has been confirmed successfully\nService availability times will be sent":
-      "تم تأكيد الطلب بنجاح سيتم إرسال أوقات توفر الخدمة",
+  "The request has been confirmed successfully \nService availability times will be sent":
+      "تم تأكيد الطلب بنجاح\n سيتم إرسال أوقات توفر الخدمة",
   "completed successfully": "تمت العملية بنجاح",
   "confirm request": "تأكيد الطلب",
   "reject request": "رفض الطلب",
   "done": "تمت العملية",
   "not done": "لم تتم العملية",
   "payment method": "طريقة التسديد",
+  "choose photo from" : "اختيار الصورة من",
+  "gallery" : "الإستديو",
+  "camera" : "الكاميرا",
   //endregion service request
 
   //region appointment
@@ -136,6 +141,7 @@ const Map<String, String> ar = {
   "beginning of the contract": "بداية العقد",
   "end of the contract": "نهاية العقد",
   "contract": "العقد",
+  "residential" : "سكني",
   "contract data": "بيانات العقد",
   "contract number": "رقم العقد",
   "contract cost": "تكلفة العقد",
@@ -145,7 +151,7 @@ const Map<String, String> ar = {
   "nationality": "الجنسية",
   "estate company data": "بيانات الشركة العقارية",
   "mediator name": "اسم الوسيط",
-  "commercial registration no": "رقم السجل التجاري",
+  "commercial register no": "رقم السجل التجاري",
   "estate address": "عنوان العقار",
   "eviction": "طلب إخلاء",
   "Select date": "اختيار التاريخ",
@@ -158,12 +164,18 @@ const Map<String, String> ar = {
   "other payments": "الدفعات الأخرى",
   "first payment data": "بيانات الدفعة الأولى",
   "bank name": " اسم البنك",
+  "due date" : "تاريخ الاستحقاق",
   "check": "شيك",
+  "check number" : "رقم الشيك",
+  "check value": "قيمة الشيك",
+  "instrument number" : "رقم السند",
+  "the value" : "القيمة",
   //endregion payments
 
   //region cancel request
   "determine the reason for rejection": "تحديد سبب الرفض",
   "write a text explaining the reason for rejection": "اكتب نص شرح سبب الرفض",
+  "reason for rejection of request" : "سبب رفض الطلب",
   //endregion cancel request
 
   //region bill
@@ -189,6 +201,10 @@ const Map<String, String> ar = {
   "send appointment": "إرسال الموعد",
   "paid": "مأجورة",
   "undefined": "غير معرف",
+  "Select time from" : "اختيار الوقت من",
+  "Select time to" : "اختيار الوقت إلى",
+  "from" : "من",
+  "to" : "إلى",
   //endregion select date & time
 
   //region done request

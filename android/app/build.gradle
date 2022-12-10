@@ -34,6 +34,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    aaptOptions {
+        cruncherEnabled false
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.repair_app"
@@ -42,12 +52,16 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-
+    signingConfigs
+            {
+                debug {}
+                release {}
+            }
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+        buildTypes {
+            release {
+                signingConfig signingConfigs.debug
+            }
         }
     }
 }
